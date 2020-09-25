@@ -1,0 +1,258 @@
+// Partials
+@import 'shared/partials/variables';
+@import 'shared/partials/mixins';
+@import 'shared/partials/utilities';
+
+// Components
+
+
+// Commons
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $dark;
+}
+
+button {
+    border: 0;
+    border-radius: 0;
+}
+
+// Header
+
+header {
+    width: 100%;
+    height: 110px;
+    padding: 0 20px;
+    background-image: url('../../assets/img/bg-header.png');
+    background-repeat: no-repeat;
+    background-position-y: 37px;
+
+    .main-nav {
+        width: 100%;
+        height: 100%;
+        @include flex(row, space-between, center);
+
+        &--logo {
+            width: 173px;
+        }
+
+        &--pages {
+            display: none;
+
+            @include responsive($desktop) {
+                display: block;
+            }
+            
+            &-list {
+                @include reset-list;
+                @include flex(row, center, center);
+                
+                &--links {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    margin: 3px;
+
+                    &::after {
+                        content: "|";
+                    }
+
+                    &:last-child::after {
+                        content: "";
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $dark;
+
+                        &:hover {
+                            color: $highlight;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--actions {
+            @include flex(row, center, center);
+             
+            &-search,
+            &-hamburger {
+                margin: 0 15px;
+            }
+
+            &-search {
+                width: 24px;
+            }
+
+            &-hamburger {
+                width: 25px;
+
+                @include responsive($desktop) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+// Hero
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 768px;
+    background-image: url('../../assets/img/hero-bg.png');
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &-intestation,
+    &-ctas {
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    &-intestation {
+        top: 290px;
+        left: 45%;
+        width: 282px; 
+
+        @include responsive($tablet) {
+            left: 25%;
+            width: 300px;
+        }
+        @include responsive($desktop) {
+            left: 25%;
+            width: 390px;
+        }
+    }
+
+    &-ctas {
+        bottom: 20px;
+        left: 50%;
+
+        button {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            width: 180px;
+            height: 60px;
+            background-color: $white;
+            color: $light;
+            margin: 3px 2px;
+
+            &.contact-us {
+                background-color: $light;
+                color: $white;
+            }
+        }
+    }
+}
+
+// Welcome
+
+.welcome {
+    padding: 50px 20px;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        @include responsive($tablet) {
+            flex-direction: column-reverse;
+        }
+
+        &--text {
+            padding: 50px 0;
+    
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+                padding: 0 20px;
+            }
+    
+            p {
+                margin: 20px 0;
+            }
+        }
+        
+        &--video {
+    
+            &--embed {
+                position: relative;
+                padding-top:30px;
+                padding-bottom:56.25%;
+                height:0;
+                overflow:hidden;
+                
+                iframe {
+                    position:absolute;
+                    top:0;
+                    left: 0;
+                    width:100%;
+                    height:100%;
+                }
+            }
+        }
+    }
+
+    &-cta {
+        @include flex(row, center, center);
+        margin: 38px 0;
+        button {
+            width: 211px;
+            height: 61px;
+            background-color: $dark;
+            color: $white;
+        }
+    }
+}
+
+// Ctas
+
+.ctas {
+
+    &-box:first-child {
+        background-image: url('../../assets/img/cta-box-building.jpg');
+    }
+    
+    &-box:nth-child(2) {
+        background-image: url('../../assets/img/cta-box-papers.jpg');
+        filter: brightness(0.6);
+    }
+    
+    &-box:last-child {
+        background-image: url('../../assets/img/cta-box-book.jpg');
+    }
+    
+    &-box {
+        position: relative;
+        color: $white;
+        height: 500px;
+        background-position-x: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: grayscale(1) brightness(0.15);
+
+        &--title {
+            position: absolute;
+            z-index: 1;
+        }
+
+        &--subtitle {
+
+        }
+
+        &--cta {
+            width: 216px;
+            height: 60px;
+        }
+    }
+}
