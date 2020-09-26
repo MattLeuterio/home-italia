@@ -123,10 +123,6 @@
 
             &-instagram {
 
-                &--title {
-                    
-                }
-
                 &--list {
                     width: calc(92px * 3);
                     @include flex(row, center, center);
