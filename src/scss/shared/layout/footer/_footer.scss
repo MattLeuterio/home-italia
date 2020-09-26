@@ -1,0 +1,201 @@
+// footer
+
+.footer {
+    width: 100%;
+    background-color: #121212;
+    color: #888890;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: $fw-regular;
+        color: $white;
+        position: relative;
+        margin-bottom: 60px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            transform: translateY(-50%);
+            height: 0.5em;
+            border-top: 1px solid $highlight;
+            width: 50px;
+        }
+    }
+
+    ul {
+        @include reset-list;
+
+        li {
+            margin: 10px 0;
+
+            a {
+                color: #888890;
+                text-decoration: none;
+
+                &:hover {
+                    color: highlight;
+                }
+            }
+        }
+    }
+
+    p {
+        padding-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 50px;
+    }
+
+    p,
+    li {
+        font-size: 0.875rem;
+        font-weight: $fw-regular;
+    }
+
+    &-top {
+        padding: 50px;
+        padding-bottom: 200px;
+        
+        @include responsive($desktop) {
+            padding: 100px;
+            padding-bottom: 200px;
+            @include flex(row, center, flex-start);
+        }
+
+        &--info {
+            margin-bottom: 55px;
+
+            @include responsive($desktop) {
+                width: 30%;
+            }
+
+            &-logo {
+                width: 126px;
+            }
+
+            &-contacts {
+
+                li {
+    
+                    span {
+                        font-weight: $fw-bold;
+                        color: $white;
+                    }
+                    
+                }
+            }
+            
+        }
+
+        &--services {
+            margin-bottom: 55px;
+            
+            @include responsive($desktop) {
+                width: 20%;
+            }
+
+            &-list {
+
+                &--item {
+
+                    &:nth-child(4) {
+                        margin-top: 40px;
+                    }
+                }
+            }
+
+        }
+
+        &--account {
+            margin-bottom: 55px;
+            
+            @include responsive($desktop) {
+                width: 20%;
+            }
+        }
+
+        &--social {
+            
+            @include responsive($desktop) {
+                width: 30%;
+            }
+
+            &-instagram {
+
+                &--title {
+                    
+                }
+
+                &--list {
+                    width: calc(92px * 3);
+                    @include flex(row, center, center);
+                    flex-wrap: wrap;
+                    
+                    &-img {
+                        width: 84px;
+                        height: 84px;
+                        margin: 4px;
+            
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+            &-newsletter {
+                width: 100%;
+                margin-top: 20px;
+
+                form {
+                    width: 270px;
+                    height: 50px;
+                    position: relative;
+                    @include flex(column, center, center);
+
+                    input[type=email] {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        padding: 0 10px;
+                        border: 0;
+                        border-radius: 0;
+                    }
+
+                    input[type=image] {
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+
+        }
+    }
+
+    &-bottom {
+        width: 100%;
+        height: 100px;
+        background-color: #000;
+        color: #888890;
+
+        span.white {
+            color: $white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @include flex(column, space-evenly, center);
+
+        @include responsive($desktop) {
+            @include flex(row, space-evenly, center);
+        }
+    }
+}
