@@ -94,7 +94,25 @@
 /***/ (function(module, exports) {
 
 // Mobile Blog Slider
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
+  // header transparent / not transparent
+  var $document = $(document),
+      $element = $('#header'),
+      navbarTransparent = 'navbar-transparent';
+  $document.scroll(function () {
+    if ($document.scrollTop() >= 200) {
+      $element.removeClass(navbarTransparent);
+    } else {
+      $element.addClass(navbarTransparent);
+    }
+  }); // Mobile Nav Open
+
+  var hamburgerIcon = $('.main-nav--actions-hamburger');
+  var mobileNav = $('.mobile-nav');
+  hamburgerIcon.click(function () {
+    mobileNav.toggleClass('open');
+  }); // Slider
+
   var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
@@ -106,7 +124,20 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: {
       el: '.swiper-pagination'
     }
-  });
+  }); // Welcome section click on image and show video;
+
+  var image = $('.welcome-content--video--image'),
+      video = $('.welcome-content--video--embed');
+  image.click(function () {
+    image.css('display', 'none');
+    video.css('display', 'block');
+  }); // Counter Stats
+
+  $('.stats-num').counterUp({
+    time: 900
+  }); // Animate Sections / Init AOS
+
+  AOS.init();
 });
 
 /***/ }),

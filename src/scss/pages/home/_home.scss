@@ -33,18 +33,24 @@
     &-ctas {
         bottom: 20px;
         left: 50%;
+        @include flex(column, center, center);
+
+        @include responsive($tablet) {
+            @include flex(row, center, center);
+        }
+
 
         button {
+            cursor: pointer;
             font-size: 0.9rem;
             text-transform: uppercase;
             width: 180px;
             height: 60px;
-            background-color: $white;
-            color: $light;
             margin: 3px 2px;
 
             &.contact-us {
                 background-color: $light;
+                border: 0;
                 color: $white;
             }
         }
@@ -57,36 +63,30 @@
     padding: 50px 20px;
 
     &-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex(column-reverse, center, center);
         
         @include responsive($tablet) {
-            flex-direction: column-reverse;
-        }
-
-        &--text {
-            padding: 50px 0;
-    
-            h1 {
-                font-size: 2rem;
-                font-weight: $fw-medium;
-                text-align: center;
-                padding: 0 20px;
-            }
-    
-            p {
-                margin: 20px 0;
-            }
-
-            @include responsive($desktop) {
-                padding: 50px 240px;
-            }
+            @include flex(column, center, center);
         }
         
+        @include responsive($desktop) {
+            @include flex(row, center, flex-start);
+        }
+
         &--video {
+            width: 100%;
+            height: 100%;
+
+            @include flex(row, center, center);
+
+            @include responsive($desktop) {
+                width: 50%;
+                @include flex(row, flex-end, flex-start);
+            }
     
             &--embed {
+                display: none; // jQuery
+                width: 100%;
                 position: relative;
                 padding-top:30px;
                 padding-bottom:56.25%;
@@ -101,18 +101,55 @@
                     height:100%;
                 }
             }
-        }
-    }
 
-    &-cta {
-        @include flex(row, center, center);
-        margin: 38px 0;
-        button {
-            width: 211px;
-            height: 61px;
-            background-color: $dark;
-            color: $white;
+            &--image {
+                cursor: pointer;
+            }
+            
         }
+
+        &--text {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            @include flex(column, center, center);
+            
+            @include responsive($desktop) {
+                width: 50%;
+                padding: 0 20px;
+                @include flex(column, flex-start, flex-start);
+            }
+
+            &-txt {
+
+                h1 {
+                    font-size: 2rem;
+                    font-weight: $fw-medium;
+                    text-align: center;
+                    
+                    @include responsive($desktop) {
+                        text-align: left;
+                    }
+                }
+        
+                p {
+                    margin: 20px 0;
+                    font-size: 0.875rem;
+                }
+            }
+          
+            &-cta {
+                @include flex(row, center, center);
+                margin: 38px 0;
+                button {
+                    width: 211px;
+                    height: 61px;
+                    background-color: $dark;
+                    color: $white;
+                }
+            }
+
+        }   
     }
 }
 
@@ -285,7 +322,7 @@
             flex-wrap: wrap;
             
             @include responsive($tablet) {
-                @include flex(column, center, center);
+                @include flex(row, center, center);
                 justify-content: space-between;
             }
 
@@ -568,8 +605,6 @@
         width: 140px;
         height: 50px;
         font-size: 0.875rem;
-        color: $dark;
-        background-color: $white;
         text-decoration: none;
         @include flex(row, center, center);
 
