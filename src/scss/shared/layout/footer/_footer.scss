@@ -193,5 +193,17 @@
         @include responsive($desktop) {
             @include flex(row, space-evenly, center);
         }
+
+        &--credits {
+
+            .square-iso {
+                width: 7px;
+                height: 12px;
+                border: 1px solid #DE2F36;
+                background-color: transparent;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
     }
 }

@@ -10,13 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
 
         <!-- HEADER -->
 
-        <header>
+        <header id="header" class="navbar-transparent">
 
             <!-- Desktop NAV -->
             <nav class="main-nav">
@@ -71,7 +73,34 @@
 
             <!-- Mobile NAV -->
             <nav class="mobile-nav">
-                <!-- to be determined -->
+                <ul class="mobile-nav--pages-list">
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Products</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Brands</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Architects</a>
+                    </li class="mobile-nav--pages-list--links">
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Partners</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Events</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">News</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Home TV</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Award</a>
+                    </li>
+                    <li class="mobile-nav--pages-list--links">
+                        <a href="#">Contact Us</a>
+                    </li>
             </nav>
 
         </header>
@@ -85,7 +114,7 @@
             </div>
 
             <div class="hero-ctas">
-                <button class="learn-more">Learn More</button>
+                <button class="btn-bordered learn-more">Learn More</button>
                 <button class="contact-us">Contact Us</button>
             </div>
 
@@ -96,32 +125,44 @@
         <section class="welcome">
 
             <div class="welcome-content">
-                <div class="welcome-content--text">
-    
-                    <h1>WELCOME TO Home Italia</h1>
-    
-                    <p>FORNISCE UN SERVIZIO “CHIAVI IN MANO” PER CHI HA UN PROGETTO DA REALIZZARE.</p>
-                    <p>CREIAMO SOLUZIONI RESIDENZIALI, HOSPITALITY E SPA IN TUTTO IL MONDO, COLLABORANDO CON PRESTIGIOSI ARCHITETTI, DESIGNER iNTERNAZIONALI E AZIENDE ESCLUSIVAMENTE MADE IN ITALY.</p>
-    
-                </div>
-    
+
                 <div class="welcome-content--video">
                     <div class="welcome-content--video--embed">
                         <iframe src="https://www.youtube.com/embed/_3BnSBCFmlk" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
+
+                    <div class="welcome-content--video--image">
+                        <img class="responsive-img" src="assets/img/welcome.png" alt="welcome">
+                    </div>
                 </div>
+
+                <div class="welcome-content--text">
+
+                    <div class="welcome-content--text-txt">
+                        <h1>WELCOME TO Home Italia</h1>
+        
+                        <p>FORNISCE UN SERVIZIO “CHIAVI IN MANO” PER CHI HA UN PROGETTO DA REALIZZARE.</p>
+                        <p>CREIAMO SOLUZIONI RESIDENZIALI, HOSPITALITY E SPA IN TUTTO IL MONDO, COLLABORANDO CON PRESTIGIOSI ARCHITETTI, DESIGNER iNTERNAZIONALI E AZIENDE ESCLUSIVAMENTE MADE IN ITALY.</p>
+                        
+                    </div>
+    
+
+                    <div class="welcome-content--text-cta">
+                        <button class="view-more">VIEW MORE</button>
+                    </div>
+    
+                </div>
+    
             </div>
 
 
-            <div class="welcome-cta">
-                <button class="view-more">VIEW MORE</button>
-            </div>
+            
 
         </section>
 
         <!-- CTAS -->
 
-        <section class="ctas">
+        <section class="ctas" data-aos="fade-up" data-aos-duration="1000">
             <div class="ctas-box">
                 <div class="ctas-box--text">
                     <div class="ctas-box--text--title">
@@ -132,7 +173,7 @@
                     </div>
                 </div>
                 <div class="ctas-box--cta">
-                    <button class="learn-more">LEARN MORE</button>
+                    <button class="btn-bordered learn-more">LEARN MORE</button>
                 </div>
             </div>
             <div class="ctas-box">
@@ -145,7 +186,7 @@
                     </div>
                 </div>
                 <div class="ctas-box--cta">
-                    <button class="learn-more">LEARN MORE</button>
+                    <button class="btn-bordered learn-more">LEARN MORE</button>
                 </div>
             </div>
             <div class="ctas-box">
@@ -160,7 +201,7 @@
                 </div>
 
                 <div class="ctas-box--cta">
-                    <button class="learn-more">LEARN MORE</button>
+                    <button class="btn-bordered learn-more">LEARN MORE</button>
                 </div>
 
             </div>
@@ -169,38 +210,39 @@
         <!-- STATS -->
         <section class="stats">
             <div class="stats-box">
-                <h3>10</h3>
+                <h3 class="stats-num">10</h3>
                 <h4>Years of experiences</h4>
                 <img src="assets/img/icon-yearsexperience.png" alt="years of experiences">
             </div>
             <div class="stats-box">
-                <h3>100</h3>
+                <h3 class="stats-num">100</h3>
                 <h4>Cases Completed</h4>
                 <img src="assets/img/icon-cases.png" alt="Cases Completed">
             </div>
             <div class="stats-box">
-                <h3>32</h3>
+                <h3 class="stats-num">32</h3>
                 <h4>Professional advisors</h4>
                 <img src="assets/img/icon-professional.png" alt=">Professional advisors">
             </div>
             <div class="stats-box">
-                <h3>99</h3>
+                <h3 class="stats-num">99</h3>
                 <h4>New cases every years</h4>
                 <img src="assets/img/icon-newcases.png" alt="New cases every years">
             </div>
             <div class="stats-box">
-                <h3>11 k</h3>
+                <h3 class="stats-num">11</h3>
                 <h4>Happy Customers</h4>
                 <img src="assets/img/icon-happycustomers.png" alt="Happy Customers">
             </div>
         </section>
+
         <!-- LATEST PROJECTS -->
         <section class="latest-projects">
             <div class="latest-projects--title">
                 <h2>Latest Projects</h2>
             </div>
             <div class="latest-projects--prj">
-                <div class="latest-projects--prj--left">
+                <div class="latest-projects--prj--left" data-aos="fade-right"  data-aos-duration="1000">
                     <div class="latest-projects--prj--left--box">
                         <div class="latest-projects--prj--left--box--img">
                             <img class="responsive-img" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="house">
@@ -242,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="latest-projects--prj--right">
+                <div class="latest-projects--prj--right" data-aos="fade-left"  data-aos-duration="1000">
                     <div class="latest-projects--prj--right--box">
                         <div class="latest-projects--prj--right--box--img">
                             <img class="responsive-img" src="https://images.unsplash.com/photo-1524061662617-6a29d732e3ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="house">
@@ -259,7 +301,7 @@
 
         <!-- PARTNERS -->
         <section class="partners">
-            <div class="partners-testimonial">
+            <div class="partners-testimonial" data-aos="zoom-in">
                 <div class="partners-testimonial--quote">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quis quisquam ea hic magni iste alias voluptatibus sequi rerum officiis.</p>
                 </div>
@@ -275,7 +317,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="partners-our">
+            <div class="partners-our"  data-aos="zoom-in" data-aos-delay="300">
                 <div class="partners-our--head">
                     <h2 class="partners-our--head-title">
                         OUR PARTNERS
@@ -365,7 +407,7 @@
 
         <!-- BLOG -->
         <section class="blog">
-            <div class="blog--box">
+            <div class="blog--box" data-aos="fade-left">
                 <div class="blog--box-cover">
                     <img src="https://images.unsplash.com/photo-1594335954551-14ed4382eb1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Ross Lovegrove">
                 </div>
@@ -382,7 +424,7 @@
                     <a class="blog--box-info--cta" href="#">READ MORE</a>
                 </div>
             </div>
-            <div class="blog--box">
+            <div class="blog--box" data-aos="fade-left" data-aos-delay="200">
                 <div class="blog--box-cover">
                     <img src="https://images.unsplash.com/photo-1543325042-c67825847491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1341&q=80">
                 </div>
@@ -399,7 +441,7 @@
                     <a class="blog--box-info--cta" href="#">READ MORE</a>
                 </div>
             </div>
-            <div class="blog--box">
+            <div class="blog--box" data-aos="fade-left" data-aos-delay="400">
                 <div class="blog--box-cover">
                     <img src="https://images.unsplash.com/photo-1589216924586-6f3eecedfb01?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80">
                 </div>
@@ -416,7 +458,7 @@
                     <a class="blog--box-info--cta" href="#">READ MORE</a>
                 </div>
             </div>
-            <div class="blog--box">
+            <div class="blog--box" data-aos="fade-left" data-aos-delay="600">
                 <div class="blog--box-cover">
                     <img src="https://images.unsplash.com/photo-1511909022865-a30191182d6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
                 </div>
@@ -437,7 +479,7 @@
 
         <!-- MOBILE BLOG SLIDER -->
 
-        <div class="slider">
+        <div class="slider" data-aos="fade-left">
             <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
@@ -527,7 +569,7 @@
 
         <!-- TO BLOG -->
 
-        <section class="to-blog">
+        <section class="to-blog" data-aos="fade-up">
             <div class="to-blog-text">
                 <h3 class="to-blog-text--subtitle">
                     Lorem Ipsum
@@ -536,7 +578,7 @@
                     What are you waiting for?
                 </h2>
             </div>
-            <a class="to-blog-cta" href="#"">
+            <a class="btn-bordered to-blog-cta" href="#"">
                 FIND OUT MORE
             </a>
         </section>
@@ -685,7 +727,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom--credits">
-                    <span>&copy; <span class="white">HOMEITALIA</span>. All Rights Reserved. Design by <span class="white"><a href="https://www.isoproduzioni.it/it/home" target="_blank">ISOPRODUZIONI</a></span></span>
+                    <span>&copy; <span class="white">HOMEITALIA</span>. All Rights Reserved. Design by <span class="white"><a href="https://www.isoproduzioni.it/it/home" target="_blank"><span class="square-iso"></span> ISOPRODUZIONI</a></span></span>
                 </div>
                 <div class="footer-bottom--number">
                     <span>Any question? Let us help you. Call us <span class="white">(+39) 02 80012362</span></span>
@@ -698,7 +740,15 @@
     </div>
 
     <!-- Script JS-->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- jQuery waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <!-- CounterUp -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+    <!-- AOS animate -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
